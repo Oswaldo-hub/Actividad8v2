@@ -43,25 +43,29 @@ public  void shuffle(){
         System.out.println("Se ha mezclado el deck");
         System.out.println("---------------------");
 }
- public void head(){
+ public void head()throws  Exception{
      Collections.shuffle(mazo);
      System.out.println("La primer carta es:  "+ mazo.get(0));
      System.out.println(mazo.remove(0));
      System.out.println("quedan 51 cartas");
      System.out.println("---------------------");
+     if(mazo == null){throw new IndexOutOfBoundsException();}
  }
 
- public void pick(){
+ public void pick() throws Exception {
+
       int vrandom = 51;
      int ramdon_final = (int) (Math.random() * vrandom);
 
      System.out.println("tu carta es:  "+ mazo.get(ramdon_final));
      mazo.remove(ramdon_final);
-     System.out.println("quedan 50 cartas");
+            System.out.println("Quedan: " +  (52 - 1));
      System.out.println("---------------------");
+     if(mazo == null){throw new IndexOutOfBoundsException();}
+
 
  }
- public void  hand(){
+ public void  hand() throws  Exception{
         System.out.println("Tu mano es: ");
         for(int i = 0;i<51;i++){
 
@@ -70,8 +74,10 @@ public  void shuffle(){
             System.out.println(""+ mazo.get(ramdon_final));
             if(i==4){break;}
             mazo.remove(ramdon_final);
+            if(mazo == null){throw new IndexOutOfBoundsException();}
 
         }
+
      System.out.println("---------------------");
  }
 
